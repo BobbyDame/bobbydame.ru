@@ -1,0 +1,509 @@
+
+* {
+  margin: 0; /* Убираем внешние отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  box-sizing: border-box; /* Учитываем отступы и границы в общей ширине и высоте элемента */
+}
+
+body {
+    font-family: "Comfortaa", sans-serif;
+    color: #46292D;
+  }
+
+  
+  .header {
+      display: flex;
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 15px;
+      background-color: #A66F74;
+  }
+  
+  .logo img {
+      max-height: 40px; 
+  }
+  
+  .menu ul {
+      list-style-type: none;
+      margin: 0; 
+      padding: 0; 
+      display: flex;
+  }
+  
+  .menu li {
+      font-weight: 300;
+      margin-left: 30px; /* Уменьшаем отступы между пунктами меню */
+  }
+  
+  .menu a {
+      text-decoration: none; /* Убираем подчеркивание у ссылок */
+      color: #ffffff; /* Цвет текста */
+  }
+  
+  .menu a:hover {
+    color: #ffd4d8; /* Цвет текста при наведении */
+}
+  
+  .marquee {
+      width: 100%; /* Ширина контейнера */
+      overflow: hidden; /* Скрыть лишний текст */
+      position: relative; /* Позиционирование для анимации */
+      margin-bottom: 5px;
+  }
+  
+  .marquee-inner {
+      display: flex; /* Используем flexbox для расположения текста в ряд */
+      white-space: nowrap; /* Запретить перенос строк */
+      animation: marquee 20s linear infinite; /* Анимация */
+      color: #806366;
+      font-size: 20px;
+  }
+  
+  .marquee p {
+      font-family: "Julius Sans One",serif;
+      flex-shrink: 0;
+      display: inline-block; /* Позволяет использовать анимацию */
+      padding-right: 0; /* Отступ между дубликатами текста */
+      line-height: 1.5;
+      font-weight: 450;
+      text-transform: uppercase;
+      animation: running-animation 20s linear infinite;
+      white-space: nowrap;
+  }
+  @keyframes marquee {
+      0% {
+          transform: translateZ(0);
+      }
+      100% {
+          transform: translate3d(-100%, 0, 0);
+      }
+  }
+
+
+  /* О нас */
+
+
+
+.full-width-block {
+  
+    display: flex; 
+    width: 80%; 
+    padding-left: 20px; 
+    background-color: #f1c2cc;
+    border-radius: 25px;
+    margin: 0 auto; /* Центрирует блок по горизонтали */
+}
+
+.text-section p{
+  flex: 1; /* Занимает оставшееся пространство */
+  padding-right: 20px; /* Отступ справа для текста */
+  padding-top: 25px;
+  color: #46292D;
+}
+
+.text-section {
+    flex: 1; /* Занимает оставшееся пространство */
+    padding-right: 20px; /* Отступ справа для текста */
+    padding-top: 25px;
+    color: #46292D;
+}
+
+.image-section {
+    flex: 1; /* Занимает оставшееся пространство */
+}
+
+.image-section img {
+    max-width: 80%; /* Изображение не выходит за пределы блока */
+    height: auto; /* Сохранение пропорций изображения */
+    margin-left: 25px;
+}
+
+
+/* Блок с фото */
+
+.place-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Центрирует дочерние элементы по горизонтали */
+    gap: 20px; /* Отступы между блоками */
+}
+
+.place {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background-color: #f1c2cc;
+    border-radius: 25px;
+}
+
+.place-text-container {
+    padding-top: 25px;
+    margin: 0 auto;
+    padding-left: 12px;
+    color: #46292D;
+}
+
+.place-img {
+    display: flex; /* Обеспечивает центрирование изображения внутри контейнера */
+    align-items: center; /* Центрирует изображение по вертикали */
+}
+
+/* Команда */
+
+.group-container {
+    display: flex;
+    justify-content: center; /* Центрирует дочерние элементы по горизонтали */
+    align-items: center; /* Центрирует дочерние элементы по вертикали */
+    gap: 10px; /* Отступы между блоками */
+    width: 100%; /* Занимает всю ширину родителя */
+    padding-top: 25px;
+}
+
+.group {
+    position: relative;
+    width: 650px; /* Задайте фиксированную ширину или относительную (например, 80%) */
+    border-radius: 25px;
+    background-color: #f9f9f9; /* Добавьте фон для видимости блока */
+    padding: 20px; /* Добавьте внутренние отступы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Добавьте тень для эффекта */
+}
+
+.group-text-container p{
+  margin: 0 auto;
+  padding-left: 12px;
+  padding-top: 15px;
+  color: #46292D;
+}
+
+.group-text-container {
+    margin: 0 auto;
+    padding-left: 12px;
+    color: #46292D;
+}
+
+.group-img {
+    display: flex; /* Обеспечивает центрирование изображения внутри контейнера */
+    align-items: center; /* Центрирует изображение по вертикали */
+    justify-content: center; /* Центрирует изображение по горизонтали */
+}
+
+.cont{
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+/* Доп. информация */
+
+.vertical-line-container {
+    display: flex;
+    justify-content: center; /* Центрирует дочерние элементы по горизонтали */
+    align-items: center; /* Центрирует дочерние элементы по вертикали */
+    gap: 20px;
+    margin-top: 55px;
+    max-width: 100%;
+}
+
+.vertical-line {
+    width: 10px;
+    height: 150px;
+    background-color: #A47277;
+    border-radius: 30px;
+}
+
+.vertical-line2 {
+    width: 10px;
+    height: 250px;
+    background-color: #A47277;
+    border-radius: 30px;
+    
+}
+
+.text-content {
+    max-width: 100%;
+    color: #46292D;
+}
+.text-content2 {
+    max-width: 70%;
+    margin-bottom: -10px; /* Настройте значение по необходимости */
+    color: #46292D;
+  }
+
+/*Карта*/
+
+.center {
+    text-align: center;
+    margin-top: 75px;
+    padding-bottom: 25px;
+}
+
+/*Подвал*/
+
+
+footer {
+    font-family: "Comfortaa", sans-serif;
+    background-color: #333; /* Цвет фона подвала */
+    color: white; /* Цвет текста */
+    padding: 20px 0; /* Отступы сверху и снизу */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 15px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between; /* Распределение элементов по горизонтали */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    max-width: 1200px; /* Максимальная ширина подвала */
+    margin: auto; /* Центрирование подвала */
+  }
+  
+  .footer-logo img {
+    display: flex;
+    max-width: 100%;
+  }
+  
+  .footer-logo p {
+    margin-top: 10px; /* Отступ сверху для текста под логотипом */
+  }
+  
+  .privacy-policy-link {
+    color: white; /* Цвет текста ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+  }
+  
+  .privacy-policy-link:hover {
+    color: #ffcc00; /* Цвет при наведении на ссылку */
+  }
+  
+  
+  footer {
+    font-family: "Comfortaa", sans-serif;
+    background-color: #672B31; /* Цвет фона подвала */
+    color: white; /* Цвет текста */
+    padding: 20px 0; /* Отступы сверху и снизу */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 15px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between; /* Распределение элементов по горизонтали */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    max-width: 1200px; /* Максимальная ширина подвала */
+    margin: auto; /* Центрирование подвала */
+  }
+  
+  .footer-logo img {
+    display: flex;
+    max-width: 100%;
+  }
+  
+  .footer-logo p {
+    margin-top: 10px; /* Отступ сверху для текста под логотипом */
+  }
+  
+  .privacy-policy-link {
+    color: white; /* Цвет текста ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+  }
+  
+  .privacy-policy-link:hover {
+    color: #F69FA8; /* Цвет при наведении на ссылку */
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around; /* Распределение элементов по горизонтали */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    max-width: 1200px; /* Максимальная ширина подвала */
+    margin: auto; /* Центрирование подвала */
+  }
+  
+  
+  .footer-contact p {
+    margin: 10px 0; /* Отступы сверху и снизу для абзацев */
+  }
+  
+  .footer-links, .footer-contact, .footer-social {
+    flex: 1; /* Каждый блок занимает равное пространство */
+    min-width: 250px; /* Минимальная ширина для каждого блока */
+    margin: 10px; /* Отступ между блоками */
+  }
+  
+  h3 {
+    margin-bottom: 10px; /* Отступ снизу заголовков */
+  }
+  
+  ul {
+    list-style-type: none; /* Убираем маркеры у списка */
+    padding: 0; /* Убираем отступы */
+  }
+  
+  li {
+    margin: 5px 0; /* Отступ между пунктами списка */
+  }
+  
+  a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: white; /* Цвет текста ссылок */
+  }
+  
+  a:hover {
+    color: #F69FA8; /* Цвет при наведении на ссылки */
+  }
+  
+  .footer-bottom {
+    margin-top: 20px; /* Отступ сверху для нижней части подвала */
+  }
+  
+  .footer-social {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .footer-social h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-social ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-social li {
+    display: inline;
+    margin: 0 5px;
+  }
+  
+  .footer-social img {
+    width: 35px; /* Ширина иконок */
+    height: auto;
+  }
+
+
+  .full-width-block {
+    opacity: 0; /* Начальное состояние: невидимый */
+    transform: translateY(20px); /* Сдвигаем вниз */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Параметры анимации */
+}
+
+.full-width-block.visible {
+    opacity: 1; /* Конечное состояние: видимый */
+    transform: translateY(0); /* Возвращаем на место */
+}
+
+
+.place-container {
+  display: flex; /* Используем flexbox для размещения блоков рядом */
+  align-items: center; /* Центрируем по вертикали */
+}
+
+.place-text-container,
+.place-img {
+  opacity: 0; /* Начальное состояние: невидимый */
+  transform: translateX(-50px); /* Сдвигаем текст налево */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Параметры анимации */
+}
+
+.place-img {
+  transform: translateX(50px); /* Сдвигаем изображение вправо */
+}
+
+.place-text-container.visible,
+.place-img.visible {
+  opacity: 1; /* Конечное состояние: видимый */
+  transform: translateX(0); /* Возвращаем на место */
+}
+
+.group-container {
+  display: flex;
+  align-items: center;
+  opacity: 0; /* Начальное состояние: невидимый */
+  transform: translateY(20px); /* Сдвигаем вниз */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Параметры анимации */
+}
+
+.group-container.visible {
+  opacity: 1; /* Конечное состояние: видимый */
+  transform: translateY(0); /* Возвращаем на место */
+}
+
+.group-container:nth-child(odd) {
+  flex-direction: row; /* Блоки с текстом и изображением по горизонтали */
+}
+
+.group-container:nth-child(even) {
+  flex-direction: row-reverse; /* Изменяем порядок для четных блоков */
+}
+
+.group-img {
+  flex: 1; /* Занимаем равную ширину */
+}
+
+.group {
+  flex: 2; /* Занимаем большую ширину */
+}
+
+.vertical-line-container {
+  display: flex;
+  align-items: center;
+  position: relative; /* Для позиционирования линии */
+}
+
+.vertical-line {
+    width: 10px;
+    height: 180px;
+    background-color: #A47277;
+    border-radius: 30px;
+    animation: drawLine 1s forwards; /* Анимация */
+}
+
+@keyframes drawLine {
+  from {
+      height: 0; /* Начальная высота */
+  }
+  to {
+      height: 150px; /* Конечная высота (измените по необходимости) */
+  }
+}
+
+.vertical-line2 {
+  width: 10px;
+  height: 180px;
+  background-color: #A47277;
+  border-radius: 30px;
+  animation: drawLine2 1s forwards; /* Анимация */
+}
+
+@keyframes drawLine2 {
+from {
+    height: 0; /* Начальная высота */
+}
+to {
+    height: 250px; /* Конечная высота (измените по необходимости) */
+}
+}
+
+.text-content {
+  margin-left: 20px; /* Отступ между линией и текстом */
+}
+
+.text-content,
+.text-content2 {
+    opacity: 0; /* Начальная прозрачность */
+    transform: translateY(20px); /* Начальное смещение */
+    animation: fadeInUp 0.5s forwards; /* Анимация появления */
+}
+
+.fade-in {
+    opacity: 0; /* Начальная прозрачность */
+    transform: translateY(20px); /* Начальное смещение */
+    animation: fadeInUp 0.5s forwards; /* Анимация появления */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Конечная прозрачность */
+        transform: translateY(0); /* Конечное смещение */
+    }
+}
+

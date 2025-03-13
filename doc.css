@@ -1,0 +1,223 @@
+
+* {
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    box-sizing: border-box; /* Учитываем отступы и границы в общей ширине и высоте элемента */
+  }
+
+body {
+    font-family: "Comfortaa", sans-serif;
+    color: #46292D;
+  }
+
+  
+  .header {
+      display: flex;
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 15px;
+      background-color: #A66F74;
+  }
+  
+  .logo img {
+      max-height: 40px; 
+  }
+  
+  .menu ul {
+      list-style-type: none;
+      margin: 0; 
+      padding: 0; 
+      display: flex;
+  }
+  
+  .menu li {
+      font-weight: 300;
+      margin-left: 30px; /* Уменьшаем отступы между пунктами меню */
+  }
+  
+  .menu a {
+      text-decoration: none; /* Убираем подчеркивание у ссылок */
+      color: #ffffff; /* Цвет текста */
+  }
+  
+  .menu a:hover {
+    color: #ffd4d8; /* Цвет текста при наведении */
+}
+
+.marquee {
+    width: 100%; /* Ширина контейнера */
+    overflow: hidden; /* Скрыть лишний текст */
+    position: relative; /* Позиционирование для анимации */
+}
+
+.marquee-inner {
+    display: flex; /* Используем flexbox для расположения текста в ряд */
+    white-space: nowrap; /* Запретить перенос строк */
+    animation: marquee 20s linear infinite; /* Анимация */
+    color: #806366;
+    font-size: 20px;
+}
+
+.marquee p {
+  padding-top: 30px;
+    font-family: "Julius Sans One",serif;
+    flex-shrink: 0;
+    display: inline-block; /* Позволяет использовать анимацию */
+    padding-right: 0; /* Отступ между дубликатами текста */
+    line-height: 1.5;
+    font-weight: 450;
+    text-transform: uppercase;
+    animation: running-animation 20s linear infinite;
+    white-space: nowrap;
+}
+@keyframes marquee {
+    0% {
+        transform: translateZ(0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+
+    h1 {
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 30px;
+    }
+
+    h2 {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .privacy-policy p {
+        background-color: #f1dada; /* Цвет фона для блока */
+        border: 1px solid #ddd; /* Рамка вокруг блока */
+        padding: 15px; /* Внутренний отступ */
+        margin: 10px 0; /* Внешний отступ */
+        border-radius: 25px; /* Закругленные углы */
+    }
+
+    .button {
+        margin-top: 20px;
+        display: inline-block; /* Чтобы элемент вел себя как кнопка */
+        padding: 10px 20px; /* Отступы внутри кнопки */
+        background-color: #A47277; /* Цвет фона кнопки */
+        color: white; /* Цвет текста */
+        text-align: center; /* Выравнивание текста по центру */
+        text-decoration: none; /* Убираем подчеркивание */
+        border-radius: 5px; /* Закругленные углы */
+        transition: background-color 0.3s; /* Плавный переход цвета фона */
+    }
+    
+    .button:hover {
+        background-color: #885e63; /* Цвет фона при наведении */
+        color: white;
+    }
+
+    /*Подвал*/
+
+    footer {
+        font-family: "Comfortaa", sans-serif;
+        background-color: #672B31; /* Цвет фона подвала */
+        color: white; /* Цвет текста */
+        padding: 20px 0; /* Отступы сверху и снизу */
+        text-align: center; /* Выравнивание текста по центру */
+        margin-top: 15px;
+      }
+      
+      .footer-container {
+        display: flex;
+        justify-content: space-between; /* Распределение элементов по горизонтали */
+        flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+        max-width: 1200px; /* Максимальная ширина подвала */
+        margin: auto; /* Центрирование подвала */
+      }
+      
+      .footer-logo img {
+        display: flex;
+        max-width: 100%;
+      }
+      
+      .footer-logo p {
+        margin-top: 10px; /* Отступ сверху для текста под логотипом */
+      }
+      
+      .privacy-policy-link {
+        color: white; /* Цвет текста ссылки */
+        text-decoration: none; /* Убираем подчеркивание */
+      }
+      
+      .privacy-policy-link:hover {
+        color: #F69FA8; /* Цвет при наведении на ссылку */
+      }
+      
+      .footer-container {
+        display: flex;
+        justify-content: space-around; /* Распределение элементов по горизонтали */
+        flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+        max-width: 1200px; /* Максимальная ширина подвала */
+        margin: auto; /* Центрирование подвала */
+      }
+      
+      
+      .footer-contact p {
+        margin: 10px 0; /* Отступы сверху и снизу для абзацев */
+      }
+      
+      .footer-links, .footer-contact, .footer-social {
+        flex: 1; /* Каждый блок занимает равное пространство */
+        min-width: 250px; /* Минимальная ширина для каждого блока */
+        margin: 10px; /* Отступ между блоками */
+      }
+      
+      h3 {
+        margin-bottom: 10px; /* Отступ снизу заголовков */
+      }
+      
+      ul {
+        list-style-type: none; /* Убираем маркеры у списка */
+        padding: 0; /* Убираем отступы */
+      }
+      
+      li {
+        margin: 5px 0; /* Отступ между пунктами списка */
+      }
+      
+      a {
+        text-decoration: none; /* Убираем подчеркивание у ссылок */
+        color: white; /* Цвет текста ссылок */
+      }
+      
+      a:hover {
+        color: #F69FA8; /* Цвет при наведении на ссылки */
+      }
+      
+      .footer-bottom {
+        margin-top: 20px; /* Отступ сверху для нижней части подвала */
+      }
+      
+      .footer-social {
+        text-align: center;
+        margin-top: 20px;
+      }
+      
+      .footer-social h3 {
+        margin-bottom: 10px;
+      }
+      
+      .footer-social ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .footer-social li {
+        display: inline;
+        margin: 0 5px;
+      }
+      
+      .footer-social img {
+        width: 35px; /* Ширина иконок */
+        height: auto;
+      }

@@ -1,0 +1,747 @@
+
+* {
+  margin: 0; /* Убираем внешние отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  box-sizing: border-box; /* Учитываем отступы и границы в общей ширине и высоте элемента */
+}
+
+body {
+  color: #280F11;
+  font-family: "Comfortaa", sans-serif;
+
+}
+.header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 5px;
+}
+
+.logo img {
+    max-height: 40px; 
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+    display: flex;
+}
+
+.menu li {
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 30px; /* Уменьшаем отступы между пунктами меню */
+}
+
+.menu a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #333; /* Цвет текста */
+}
+
+.menu a:hover {
+    color: #9C2C38; /* Цвет текста при наведении */
+}
+
+
+/* Кнопка закрытия */
+.container {
+    display: flex; /* Используем Flexbox для центрирования */
+    justify-content: center; /* Центрируем по горизонтали */
+    height: 100vh; /* Высота контейнера равна высоте экрана */
+    margin-top: 5px;
+    margin-bottom: -300px;
+}
+
+.hero {
+    background-image: url('images/bg.png'); 
+    background-size: cover;
+    background-position: center;
+    border: none;
+    border-radius: 50px;
+    height: 70%; /* Высота элемента равна высоте контейнера */
+    width: 90%; /* Ширина элемента равна ширине контейнера */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Выравнивание текста по правому краю */
+    color: white; /* Цвет текста */
+    padding: 20px; /* Отступы вокруг текста */
+    position: relative; /* Добавлено для позиционирования текста внутри .hero */
+
+}
+
+.size{
+    font-size: 50px;
+}
+
+.razmer{
+    font-size: 25px;
+}
+
+.text-container {
+    position: absolute;
+    bottom: 80px; /* Расстояние от нижней грани */
+    right: 20px; /* Расстояние от правой грани */
+    color: white;
+    text-align: right; /* Выравнивание текста по правому краю */
+}
+
+.button {
+  font-family: "Comfortaa", sans-serif;
+    font-size: 20px;
+    margin-top: 20px; /* Отступ сверху для кнопки */
+    padding: 10px 45px; /* Отступы внутри кнопки */
+    background-color: #A67F83; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none;
+    border-radius: 50px; /* Скругление углов кнопки */
+    cursor: pointer; /* Указатель при наведении */
+}
+.button:hover {
+    background-color: #816366; /* Цвет кнопки при наведении */
+}
+
+
+.marquee {
+    width: 100%; /* Ширина контейнера */
+    overflow: hidden; /* Скрыть лишний текст */
+    position: relative; /* Позиционирование для анимации */
+}
+
+.marquee-inner {
+    display: flex; /* Используем flexbox для расположения текста в ряд */
+    white-space: nowrap; /* Запретить перенос строк */
+    animation: marquee 20s linear infinite; /* Анимация */
+    color: #806366;
+    font-size: 20px;
+}
+
+.marquee p {
+  padding-top: 30px;
+    font-family: "Julius Sans One",serif;
+    flex-shrink: 0;
+    display: inline-block; /* Позволяет использовать анимацию */
+    padding-right: 0; /* Отступ между дубликатами текста */
+    line-height: 1.5;
+    font-weight: 450;
+    text-transform: uppercase;
+    animation: running-animation 20s linear infinite;
+    white-space: nowrap;
+}
+@keyframes marquee {
+    0% {
+        transform: translateZ(0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/*Категории*/
+
+.carousel {
+    position: relative;
+    width: 250px; /* Ширина слайдера */
+    overflow: hidden;
+    margin: auto;
+    margin-left: 16px;
+    border: none;
+    border-radius: 25px; 
+  }
+  
+  .carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item {
+    min-width: 100%; /* Каждый элемент занимает 100% ширины контейнера */
+  }
+  
+  .carousel img {
+    width: 100%; /* Изображения занимают всю ширину блока */
+    
+  }
+
+  .prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    left: 10px;
+  }
+  
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    right: 10px;
+  }
+
+  .iframe-container {
+    max-width: 100%;
+    width: 1200px; /* Ширина фрейма */
+    height: 600px; /* Высота фрейма */
+    margin-left: 25px;
+    border: 1px solid #ccc; /* Граница фрейма */
+    border-radius: 10px; /* Закругление углов */
+    overflow: hidden; /* Скрыть переполнение */
+  }
+  
+  iframe {
+    width: 100%; /* Фрейм занимает всю ширину контейнера */
+    height: 100%; /* Фрейм занимает всю высоту контейнера */
+    border: none; /* Без границы у фрейма */
+  }
+
+  /*Популярные товары */
+
+  .poptovar{
+    margin-top: 100px;
+  }
+
+.poptovars {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.tovars {
+    display: flex;
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку, если не хватает места */
+}
+
+.tovar {
+  color: rgb(179, 114, 144);
+  font-size: 15px;
+  display: inline-block;
+  border-radius: 30px;
+  margin: 17px; 
+  margin-top: 5px;
+  border-radius: 10px;
+  width: 220px;
+  padding: 10px; /* Добавляем внутренние отступы */
+  box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+  vertical-align: top; /* Выравнивание по верхнему краю */
+  margin-left: 20px; /* Отступ между блоками */
+  cursor: pointer;
+}
+
+.tovar img {
+  margin-top: 17px;
+  margin-left: 13px;
+  width: 90%; /* Изображение занимает всю ширину блока */
+  height: auto;
+}
+
+.center {
+  text-align: center; /* Центрирование текста */
+}
+
+.www{
+  margin-left: 12px;
+  color: #7D4B50;
+  font-size: 25px;
+}
+  
+.navig {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #7D4B50;
+}
+
+.navig a{
+  color: #7D4B50;
+}
+
+.navig a:hover{
+  color: #bb7178;
+}
+
+.naz {
+  font-size: 25px;
+  text-align: center;
+}
+
+.modal {
+  display: none; /* Скрываем модальное окно по умолчанию */
+  position: fixed; /* Фиксируем модальное окно относительно окна браузера */
+  z-index: 1000; /* Устанавливаем на передний план */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ширина на весь экран */
+  height: 100%; /* Высота на весь экран */
+  overflow: hidden; /* Отключаем прокрутку для самого модального окна */
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* Центрируем модальное окно с отступом сверху */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ширина модального окна */
+  max-height: 80%; /* Максимальная высота модального окна */
+  overflow-y: auto; /* Включаем вертикальную прокрутку, если содержимое превышает высоту */
+}
+
+.close {
+  color: #7D4B50;
+  float: right;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #bb7178;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-container {
+  display: flex; /* Используем flexbox для размещения содержимого */
+}
+
+.modal-right {
+  margin-left: 15px;
+}
+
+.modal-right h1 {
+  margin-top: 15px; /* Отступ сверху */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+.modal-right p {
+  margin: 10px 0; /* Отступ сверху и снизу */
+}
+
+/*Новости*/
+
+* {
+    box-sizing: border-box;
+  }
+
+
+input[type="radio"] {
+    display: none;
+  }
+  
+  .container2 {
+    background: rgb(255, 255, 255);
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 2em;
+  }
+  
+  .slide-wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding: 12em;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 1px 2px 0px rgb(53, 53, 53);
+    overflow: hidden;
+  }
+  
+  /*==================
+    Slides
+  ===================*/
+  
+  #slide-role {
+    background: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 0%;
+    z-index: 100;
+    transition: left .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    /* flex */
+    display: flex;
+  }
+  
+  .slide {
+    width: 100%; /* Ширина слайда на всю страницу */
+    height: 80vh; /* Высота слайда на весь экран */
+    position: relative; /* Устанавливаем позиционирование для вложенных элементов */
+}
+
+  .container3 {
+  padding-top: 30px;
+  display: block; /* Используем flexbox для выравнивания */
+  align-items: center; /* Центрируем элементы по вертикали */
+  }
+
+.text-content2 h2{
+    color:#3a2729;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 5px;
+    
+}
+.text-content2 p{
+    color:#3a2729;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+    border: #806366;
+    border-radius: 12px;
+}
+
+.text-content2 {
+    margin-left: 20px;
+    color: #3a2729;
+    align-items: center; /* Центрируем элементы по вертикали */
+}
+
+.button2 {
+  text-align: center;
+  font-size: 15px;
+  display: flex; /* Делаем кнопку блочным элементом */
+  padding: 10px 20px; /* Добавляем внутренние отступы */
+  background-color: #A67F83; /* Цвет фона кнопки */
+  color: white; /* Цвет текста кнопки */
+  text-decoration: none; /* Убираем подчеркивание */
+  border-radius: 30px; /* Скругляем углы кнопки */
+  width: 130px;
+  height: 35px;
+  margin: 0 auto; /* Центрируем кнопку */
+}
+
+.button2:hover {
+  color: white;
+    background-color: #8b6b6f;
+}
+
+  /* backgrounds */
+  
+  .slide-1 {
+    background-image: url(images/img1.png); 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.slide-2 {
+    background-image: url(images/img2.png);
+    background-size: cover; 
+    background-position: center;
+}
+
+.slide-3 {
+    background-image: url(images/img3.png); 
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-4 {
+    background-image: url(images/img4.png);
+    background-size: cover;
+    background-position: center;
+}
+  
+  .btn,
+  .btn::after {
+    border-radius: 50%;
+    transition: all .5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+  
+  .btn {
+    border: 1px solid #564446;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 2px 2px #7D4B50;
+    position: absolute;
+    bottom: 12%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transform: scale(1.1);
+    z-index: 1000;
+  }
+  
+  .btn:nth-of-type(1) {
+    left: 38%;
+  }
+  
+  .btn:nth-of-type(2) {
+    left: 45%;
+  }
+  
+  .btn:nth-of-type(3) {
+    left: 52%;
+  }
+  
+  .btn:nth-of-type(4) {
+    left: 59%;
+  }
+  
+  .btn:hover {
+    transform: scale(1.4);
+  }
+  
+  .btn::after {
+    content: "";
+    display: inline-block;
+    border: 1px solid white;
+    background: #A67F83;
+    width: 20px;
+    height: 20px;
+    margin: 3px 3px;
+    transform: scale(.5, .5);
+    box-shadow: 0px 1px 5px rgba(56, 56, 56, 0.822);
+  }
+  
+  
+  input[type="radio"]:checked#slide-2-trigger~div.slide-wrapper>div#slide-role {
+    left: -100%;
+  }
+  
+  input[type="radio"]:checked#slide-3-trigger~div.slide-wrapper>div#slide-role {
+    left: -200%;
+  }
+  
+  input[type="radio"]:checked#slide-4-trigger~div.slide-wrapper>div#slide-role {
+    left: -300%;
+  }
+  
+  /* button logic */
+  
+  input[type="radio"]:checked+label.btn {
+    transform: scale(1.2);
+    border: 1px solid #564446
+  }
+  
+  input[type="radio"]:checked+label.btn::after {
+    transform: scale(1.1, 1.1);
+    background: #d5a2a7;
+  }
+
+  
+  @media only screen and (max-width: 750px) {
+    .slide-wrapper {
+        width: 90%;
+        height: 100%;
+    }
+    .btn:nth-of-type(1) {
+        left: 93%;
+        bottom: 60%;
+    }
+    .btn:nth-of-type(2) {
+        left: 93%;
+        bottom: 50%;
+    }
+    .btn:nth-of-type(3) {
+        left: 93%;
+        bottom: 40%;
+    }
+    .btn:nth-of-type(4) {
+        left: 93%;
+        bottom: 30%;
+    }
+  }
+  
+  @media only screen and (max-width: 450px) {
+    .btn:nth-of-type(1) {
+        left: 91%;
+    }
+    .btn:nth-of-type(2) {
+        left: 91%;
+    }
+    .btn:nth-of-type(3) {
+        left: 91%;
+    }
+    .btn:nth-of-type(4) {
+        left: 91%;
+    }
+  }
+
+  /*Контакты*/
+
+  .contact-form-container {
+    width: 100%;
+    max-width: 800px; /* Ограничиваем максимальную ширину */
+    margin: 0 auto; /* Центрируем контейнер */
+    padding: 20px;
+    border-radius: 8px; /* Скругляем углы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для эффекта */
+}
+
+h2 {
+    text-align: center; /* Центрируем заголовок */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Отступ между полями */
+}
+
+label {
+    display: block; /* Делаем метки блочными элементами */
+    margin-bottom: 5px; /* Отступ снизу для меток */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 15px;
+    width: 100%; /* Поля занимают всю ширину контейнера */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Цвет границы */
+    border-radius: 20px; /* Скругление углов полей */
+}
+
+.svyaz{
+    font-size: 40px;
+    padding-bottom: 50px;
+}
+
+textarea {
+    resize: none; /* Запрет изменения размера текстового поля */
+}
+
+.submit-button {
+    font-family: "Comfortaa", sans-serif;
+    font-size:20px;
+    display: block; /* Делаем кнопку блочной для центрирования */
+    width: 300px; /* Ширина кнопки */
+    margin: 0 auto; /* Центрируем кнопку */
+    padding: 10px; /* Внутренние отступы кнопки */
+    background-color: #A47277; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 30px; /* Скругляем углы кнопки */
+    cursor: pointer; /* Указатель при наведении */
+}
+
+.submit-button:hover {
+    background-color: #6c4a4e; /* Цвет фона при наведении */
+}
+  
+
+/* Подвал */
+
+footer {
+  font-family: "Comfortaa", sans-serif;
+  background-color: #672B31; /* Цвет фона подвала */
+  color: white; /* Цвет текста */
+  padding: 20px 0; /* Отступы сверху и снизу */
+  text-align: center; /* Выравнивание текста по центру */
+  margin-top: 15px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Распределение элементов по горизонтали */
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  max-width: 1200px; /* Максимальная ширина подвала */
+  margin: auto; /* Центрирование подвала */
+}
+
+.footer-logo img {
+  display: flex;
+  max-width: 100%;
+}
+
+.footer-logo p {
+  margin-top: 10px; /* Отступ сверху для текста под логотипом */
+}
+
+.privacy-policy-link {
+  color: white; /* Цвет текста ссылки */
+  text-decoration: none; /* Убираем подчеркивание */
+}
+
+.privacy-policy-link:hover {
+  color: #F69FA8; /* Цвет при наведении на ссылку */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around; /* Распределение элементов по горизонтали */
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  max-width: 1200px; /* Максимальная ширина подвала */
+  margin: auto; /* Центрирование подвала */
+}
+
+
+.footer-contact p {
+  margin: 10px 0; /* Отступы сверху и снизу для абзацев */
+}
+
+.footer-links, .footer-contact, .footer-social {
+  flex: 1; /* Каждый блок занимает равное пространство */
+  min-width: 250px; /* Минимальная ширина для каждого блока */
+  margin: 10px; /* Отступ между блоками */
+}
+
+h3 {
+  margin-bottom: 10px; /* Отступ снизу заголовков */
+}
+
+ul {
+  list-style-type: none; /* Убираем маркеры у списка */
+  padding: 0; /* Убираем отступы */
+}
+
+li {
+  margin: 5px 0; /* Отступ между пунктами списка */
+}
+
+a {
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+  color: white; /* Цвет текста ссылок */
+}
+
+a:hover {
+  color: #F69FA8; /* Цвет при наведении на ссылки */
+}
+
+.footer-bottom {
+  margin-top: 20px; /* Отступ сверху для нижней части подвала */
+}
+
+.footer-social {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-social h3 {
+  margin-bottom: 10px;
+}
+
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-social li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.footer-social img {
+  width: 35px; /* Ширина иконок */
+  height: auto;
+}
+
+.wow {
+  opacity: 0;
+  transition: all 0.3s 0.3s ease-out;
+}
+
+.animated {
+  opacity: 1;
+}

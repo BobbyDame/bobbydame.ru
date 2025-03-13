@@ -1,0 +1,410 @@
+
+* {
+  margin: 0; /* Убираем внешние отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  box-sizing: border-box; /* Учитываем отступы и границы в общей ширине и высоте элемента */
+}
+
+body {
+  font-family: "Comfortaa", sans-serif;
+}
+
+body.modal-open {
+  overflow: hidden; /* Отключаем прокрутку страницы */
+}
+
+.header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 15px;
+    background-color: #A66F74;
+}
+
+.logo img {
+    max-height: 40px; 
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+    display: flex;
+}
+
+.menu li {
+    font-weight: 300;
+    margin-left: 30px; /* Уменьшаем отступы между пунктами меню */
+}
+
+.menu a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #ffffff; /* Цвет текста */
+}
+
+.menu a:hover {
+  color: #ffd4d8; /* Цвет текста при наведении */
+}
+
+.marquee {
+    width: 100%; /* Ширина контейнера */
+    overflow: hidden; /* Скрыть лишний текст */
+    position: relative; /* Позиционирование для анимации */
+    margin-bottom: 5px;
+}
+
+.marquee-inner {
+    display: flex; /* Используем flexbox для расположения текста в ряд */
+    white-space: nowrap; /* Запретить перенос строк */
+    animation: marquee 20s linear infinite; /* Анимация */
+    color: #806366;
+    font-size: 20px;
+}
+
+.marquee p {
+    font-family: "Julius Sans One",serif;
+    flex-shrink: 0;
+    display: inline-block; /* Позволяет использовать анимацию */
+    padding-right: 0; /* Отступ между дубликатами текста */
+    line-height: 1.5;
+    font-weight: 450;
+    text-transform: uppercase;
+    animation: running-animation 20s linear infinite;
+    white-space: nowrap;
+}
+@keyframes marquee {
+    0% {
+        transform: translateZ(0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+.main-container {
+    display: flex; /* Используем flexbox для расположения контейнеров рядом */
+}
+
+.catalog {
+  padding: 20px;
+}
+
+.flex-container {
+  display: flex; /* Используем Flexbox для расположения элементов */
+}
+
+.container {
+  display: inline-block; /* Позволяет контейнеру занимать только необходимое место */
+  background-color: #FFC6D2;
+  vertical-align: top; /* Выравнивание по верхнему краю */
+  width: 250px; /* Укажите ширину контейнера по вашему усмотрению */
+  height: 500px;
+  border-radius: 25px;
+}
+
+#toyList {
+  list-style-type: none; /* Убирает маркеры списка */
+  padding: 0; /* Убирает отступы у списка */
+}
+
+.toy {
+  margin-bottom: 20px; /* Расстояние между элементами списка */
+}
+
+.toy a {
+  text-decoration: none; /* Убирает подчеркивание у ссылок */
+  padding: 2px;
+  font-size: 15px; /* Увеличивает размер текста */
+  color: #7D4B50; /* Цвет текста (можно изменить на нужный) */
+  display: block; /* Делает ссылку блочным элементом для возможности добавления псевдоэлемента */
+  position: relative; /* Позволяет позиционировать псевдоэлемент */
+}
+
+.toy a:hover{
+  color: #c97f86;
+}
+
+.toy a::after {
+  content: ""; /* Создает пустой контент для псевдоэлемента */
+  display: block; /* Делаем его блочным элементом */
+  width: 50%; /* Ширина черточки равна ширине ссылки */
+  height: 2px; /* Высота черточки */
+  background-color: #A66F74; /* Цвет черточки */
+  margin-top: 5px; /* Отступ сверху от текста до черточки */
+}
+
+.toy a.active {
+  font-weight: bold; /* Жирный текст для активной ссылки */
+  color: #ffffff; /* Цвет текста активной ссылки */
+}
+
+.toy.active a::after {
+  background-color: #ffffff; /* Цвет черточки для активной ссылки */
+}
+
+
+/* Дополнительные стили для списка */
+ul {
+  list-style-type: none; /* Убираем маркеры */
+  padding: 0;
+  margin-left: 12px;
+}
+
+li {
+  margin: 30px 0;
+}
+
+
+
+.tovars {
+  display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку, если не хватает места */
+}
+
+.tovar {
+  color: rgb(179, 114, 144);
+  font-size: 15px;
+  display: inline-block;
+  border-radius: 30px;
+  margin: 17px; 
+  margin-top: 5px;
+  border-radius: 10px;
+  width: 220px;
+  padding: 10px; /* Добавляем внутренние отступы */
+  box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+  vertical-align: top; /* Выравнивание по верхнему краю */
+  margin-left: 20px; /* Отступ между блоками */
+  cursor: pointer;
+}
+
+.tovar img {
+  margin-top: 17px;
+  margin-left: 13px;
+  width: 90%; /* Изображение занимает всю ширину блока */
+  height: auto;
+}
+
+.center {
+  text-align: center; /* Центрирование текста */
+}
+
+.www{
+  margin-top: 20px;
+  margin-left: 12px;
+  color: #7D4B50;
+  font-size: 25px;
+}
+  
+.navig {
+  margin-left: 12px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #7D4B50;
+}
+
+.navig a{
+  color: #7D4B50;
+}
+
+.navig a:hover{
+  color: #bb7178;
+}
+
+.naz {
+  font-size: 25px;
+  text-align: center;
+}
+
+.modal {
+  display: none; /* Скрываем модальное окно по умолчанию */
+  position: fixed; /* Фиксируем модальное окно относительно окна браузера */
+  z-index: 1000; /* Устанавливаем на передний план */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ширина на весь экран */
+  height: 100%; /* Высота на весь экран */
+  overflow: hidden; /* Отключаем прокрутку для самого модального окна */
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* Центрируем модальное окно с отступом сверху */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ширина модального окна */
+  max-height: 80%; /* Максимальная высота модального окна */
+  overflow-y: auto; /* Включаем вертикальную прокрутку, если содержимое превышает высоту */
+}
+
+.close {
+  color: #7D4B50;
+  float: right;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #bb7178;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-container {
+  display: flex; /* Используем flexbox для размещения содержимого */
+}
+
+.modal-right {
+  margin-left: 15px;
+}
+.modal-right h1 {
+  margin-top: 15px; /* Отступ сверху */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+.modal-right p {
+  margin: 10px 0; /* Отступ сверху и снизу */
+}
+
+
+
+footer {
+    font-family: "Comfortaa", sans-serif;
+    background-color: #333; /* Цвет фона подвала */
+    color: white; /* Цвет текста */
+    padding: 20px 0; /* Отступы сверху и снизу */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 15px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between; /* Распределение элементов по горизонтали */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    max-width: 1200px; /* Максимальная ширина подвала */
+    margin: auto; /* Центрирование подвала */
+  }
+  
+  .footer-logo img {
+    display: flex;
+    max-width: 100%;
+  }
+  
+  .footer-logo p {
+    margin-top: 10px; /* Отступ сверху для текста под логотипом */
+  }
+  
+  .privacy-policy-link {
+    color: white; /* Цвет текста ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+  }
+  
+  .privacy-policy-link:hover {
+    color: #ffcc00; /* Цвет при наведении на ссылку */
+  }
+  
+  
+  footer {
+    font-family: "Comfortaa", sans-serif;
+    background-color: #672B31; /* Цвет фона подвала */
+    color: white; /* Цвет текста */
+    padding: 20px 0; /* Отступы сверху и снизу */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 15px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between; /* Распределение элементов по горизонтали */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    max-width: 1200px; /* Максимальная ширина подвала */
+    margin: auto; /* Центрирование подвала */
+  }
+  
+  .footer-logo img {
+    display: flex;
+    max-width: 100%;
+  }
+  
+  .footer-logo p {
+    margin-top: 10px; /* Отступ сверху для текста под логотипом */
+  }
+  
+  .privacy-policy-link {
+    color: white; /* Цвет текста ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+  }
+  
+  .privacy-policy-link:hover {
+    color: #F69FA8; /* Цвет при наведении на ссылку */
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around; /* Распределение элементов по горизонтали */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    max-width: 1200px; /* Максимальная ширина подвала */
+    margin: auto; /* Центрирование подвала */
+  }
+  
+  
+  .footer-contact p {
+    margin: 10px 0; /* Отступы сверху и снизу для абзацев */
+  }
+  
+  .footer-links, .footer-contact, .footer-social {
+    flex: 1; /* Каждый блок занимает равное пространство */
+    min-width: 250px; /* Минимальная ширина для каждого блока */
+    margin: 10px; /* Отступ между блоками */
+  }
+  
+  h3 {
+    margin-bottom: 10px; /* Отступ снизу заголовков */
+  }
+  
+  ul {
+    list-style-type: none; /* Убираем маркеры у списка */
+    padding: 0; /* Убираем отступы */
+  }
+  
+  li {
+    margin: 5px 0; /* Отступ между пунктами списка */
+  }
+  
+  a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: white; /* Цвет текста ссылок */
+  }
+  
+  a:hover {
+    color: #F69FA8; /* Цвет при наведении на ссылки */
+  }
+  
+  .footer-bottom {
+    margin-top: 20px; /* Отступ сверху для нижней части подвала */
+  }
+  
+  .footer-social {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .footer-social h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-social ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-social li {
+    display: inline;
+    margin: 0 5px;
+  }
+  
+  .footer-social img {
+    width: 35px; /* Ширина иконок */
+    height: auto;
+  }

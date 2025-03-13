@@ -1,0 +1,44 @@
+
+* {
+  margin: 0; /* Убираем внешние отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  box-sizing: border-box; /* Учитываем отступы и границы в общей ширине и высоте элемента */
+}
+body {
+  font-family: "Comfortaa", sans-serif;
+  color: #46292D;
+}
+
+
+.header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 15px;
+    background-color: #A66F74;
+}
+
+.logo img {
+    max-height: 40px; 
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+    display: flex;
+}
+
+.menu li {
+    font-weight: 300;
+    margin-left: 30px; /* Уменьшаем отступы между пунктами меню */
+}
+
+.menu a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #ffffff; /* Цвет текста */
+}
+
+.menu a:hover {
+    color: #007BFF; /* Цвет текста при наведении */
+}
